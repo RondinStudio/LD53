@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!50 &361574067 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 8909925949911328455, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
-  m_PrefabInstance: {fileID: 8909925949334297370}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1231861779
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,9 +621,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDrone
       objectReference: {fileID: 0}
-    - target: {fileID: 8909925949945586222, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
-      propertyPath: chainRb
-      value: 
-      objectReference: {fileID: 361574067}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}

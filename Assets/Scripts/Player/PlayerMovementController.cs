@@ -47,15 +47,6 @@ public class PlayerMovementController : MonoBehaviour
 
         moveInput = new Vector2(mx, my);
         moveVelocity = moveInput.normalized * speed;
-
-        //if (mx > 0 && moveVelocity.y + moveVelocity.x != 0)
-        //{
-        //    velocityInterpolation = -Mathf.Abs(moveVelocity.x) / Mathf.Abs(moveVelocity.y + moveVelocity.x);
-        //}
-        //else if (mx < 0 && moveVelocity.y + moveVelocity.x != 0)
-        //{
-        //    velocityInterpolation = Mathf.Abs(moveVelocity.x) / Mathf.Abs(moveVelocity.y + moveVelocity.x);
-        //}
     }
 
     // Full version, clamping settable on all 4 range elements (in1, in2, out1, out2)

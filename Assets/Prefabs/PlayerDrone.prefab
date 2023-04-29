@@ -1012,12 +1012,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8909925949945586216}
-  - component: {fileID: 8909925949945586217}
   - component: {fileID: 8909925949945586222}
+  - component: {fileID: 1077037723466941353}
   - component: {fileID: 325114008837546240}
+  - component: {fileID: 8909925949945586217}
   m_Layer: 3
   m_Name: PlayerDrone
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1039,27 +1040,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &8909925949945586217
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8909925949945586218}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 40
-  m_LinearDrag: 5
-  m_AngularDrag: 20
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &8909925949945586222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,6 +1055,19 @@ MonoBehaviour:
   speed: 100000
   chainRb: {fileID: 8909925949911328455}
   chainOffset: {x: 0, y: -0.25}
+--- !u!114 &1077037723466941353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909925949945586218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375bd3a2a3151724b8c03e9ecfe33b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
 --- !u!61 &325114008837546240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1101,6 +1094,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7776108}
   m_EdgeRadius: 0
+--- !u!50 &8909925949945586217
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909925949945586218}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 40
+  m_LinearDrag: 5
+  m_AngularDrag: 20
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8909925950059626783
 GameObject:
   m_ObjectHideFlags: 0

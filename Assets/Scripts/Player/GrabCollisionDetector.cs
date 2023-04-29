@@ -12,7 +12,6 @@ public class GrabCollisionDetector : MonoBehaviour
         {
             if (!boxJoint)
             {
-                //Input.GetKey
                 if (Input.GetKey(KeyCode.Space))
                 {
                     // creates joint

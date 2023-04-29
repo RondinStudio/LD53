@@ -49,6 +49,6 @@ public class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(moveVelocity * Time.fixedDeltaTime);
-        chainRb.position = rb.position + chainOffset;
+        //chainRb.position = rb.position + chainOffset;
     }
 }

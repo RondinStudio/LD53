@@ -37,4 +37,12 @@ public class GrabCollisionDetector : MonoBehaviour
             }
         }
     }
+
+    public void DestroyJointIfPresent()
+    {
+        if (boxJoint)
+        {
+            Destroy(boxJoint);
+        }
+    }
 }

@@ -4,11 +4,6 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
-public enum EScoreType
-{
-    Box
-}
-
 public class ScoreController : MonoBehaviour
 {
     [SerializeField]
@@ -26,14 +21,9 @@ public class ScoreController : MonoBehaviour
         return score;
     }
 
-    public void AddScore(EScoreType type)
+    public void AddScore(int value)
     {
-        switch (type)
-        {
-            case EScoreType.Box:
-                score += 1;
-                break;
-        }
+        score += value;
 
         UpdateScoreText();
     }

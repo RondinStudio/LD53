@@ -1013,6 +1013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8909925949945586216}
   - component: {fileID: 8909925949945586222}
+  - component: {fileID: 2158339580158227648}
   - component: {fileID: 1077037723466941353}
   - component: {fileID: 5309992209019748124}
   - component: {fileID: 325114008837546240}
@@ -1058,6 +1059,18 @@ MonoBehaviour:
   chainRb: {fileID: 8909925949911328455}
   chainOffset: {x: 0, y: -0.25}
   spriteTransform: {fileID: 8909925949139698122}
+--- !u!114 &2158339580158227648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909925949945586218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cec8dfa5ac6144383bdc9492528bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1077037723466941353
 MonoBehaviour:
   m_ObjectHideFlags: 0

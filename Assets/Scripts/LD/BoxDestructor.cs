@@ -8,6 +8,11 @@ public class BoxDestructor : MonoBehaviour
     private GoalController goalController;
     private GrabCollisionDetector grabCollisionDetector;
 
+    [SerializeField]
+    private AudioSource goodSound;
+    [SerializeField]
+    private AudioSource badSound;
+
     private void Start()
     {
         scoreController = GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreController>();
@@ -22,10 +27,14 @@ public class BoxDestructor : MonoBehaviour
             BoxValues boxValues = collision.transform.GetComponent<BoxController>().boxValues;
             if (goalController.goalValues.color == boxValues.color)
             {
+                if (!goodSound.isPlaying)
+                    goodSound.Play();
                 scoreController.AddScore(boxValues.scoreValue);
             }
             else
             {
+                if (!badSound.isPlaying)
+                    badSound.Play();
                 scoreController.AddScore(-1);
             }
             grabCollisionDetector.DestroyJointIfPresent();

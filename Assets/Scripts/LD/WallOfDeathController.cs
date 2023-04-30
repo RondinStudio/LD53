@@ -8,6 +8,9 @@ public class WallOfDeathController : MonoBehaviour
     private PlayerHealthController playerHealthController;
     private GrabCollisionDetector grabCollisionDetector;
 
+    [SerializeField]
+    private AudioSource destructionSound;
+
     private void Start()
     {
         playerHealthController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthController>();
@@ -22,6 +25,9 @@ public class WallOfDeathController : MonoBehaviour
             {
                 grabCollisionDetector.DestroyJointIfPresent();
             }
+
+            if (!destructionSound.isPlaying)
+                destructionSound.Play();
 
             Destroy(collision.gameObject);
             if (playerHealthController)

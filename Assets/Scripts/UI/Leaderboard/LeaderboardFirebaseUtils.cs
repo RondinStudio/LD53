@@ -35,13 +35,13 @@ public class LeaderboardEntry
 
 public class LeaderboardFirebaseUtils : MonoBehaviour
 {
-    const string FirebaseURI = "https://us-central1-ld53-2fbc3.cloudfunctions.net/addScore";
+    const string FirebaseURI = "https://us-central1-ld53-2fbc3.cloudfunctions.net";
 
     static readonly HttpClient client = new HttpClient();
 
     private LeaderboardEntry[] leaderboard;
-    private string playerName;
-    private int score;
+    private string playerName = "";
+    private int score = -999;
 
     public LeaderboardEntry[] GetLeaderboard()
     {
@@ -70,7 +70,28 @@ public class LeaderboardFirebaseUtils : MonoBehaviour
             StringContent stringContent = new StringContent(JsonUtility.ToJson(newEntry), Encoding.UTF8, "application/json");
 
             // Send new leaderboard entry to Firebase database
-            var response = await client.PostAsync(FirebaseURI, stringContent);
+            var response = await client.PostAsync(FirebaseURI + "/addScore", stringContent);
+            if (response != null)
+            {
+                string jsonString = await response.Content.ReadAsStringAsync();
+                // Save leaderboard
+                leaderboard = JsonHelper.FromJson<LeaderboardEntry>(jsonString);
+            }
+        }
+        catch (HttpRequestException e)
+        {
+            Debug.Log(e.Message);
+            // Set leaderboard to an empty array, to avoid crashing the leaderboard panel
+            leaderboard = new LeaderboardEntry[0];
+        }
+    }
+
+    public async Task getScores()
+    {
+        try
+        {
+            // Send new leaderboard entry to Firebase database
+            var response = await client.PostAsync(FirebaseURI + "/getScores", null);
             if (response != null)
             {
                 string jsonString = await response.Content.ReadAsStringAsync();

@@ -45,4 +45,13 @@ public class GrabCollisionDetector : MonoBehaviour
             Destroy(boxJoint);
         }
     }
+
+    public GameObject GetConnectedObject()
+    {
+        if (boxJoint)
+        {
+            return boxJoint.connectedBody.gameObject;
+        }
+        return null;
+    }
 }

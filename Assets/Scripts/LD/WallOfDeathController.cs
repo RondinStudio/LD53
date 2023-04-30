@@ -18,9 +18,13 @@ public class WallOfDeathController : MonoBehaviour
     {
         if (collision.CompareTag("Box"))
         {
+            if (grabCollisionDetector.GetConnectedObject() == collision.gameObject)
+            {
+                grabCollisionDetector.DestroyJointIfPresent();
+            }
+
             Destroy(collision.gameObject);
             playerHealthController.RemoveHealth();
-            grabCollisionDetector.DestroyJointIfPresent();
         }
     }
 }

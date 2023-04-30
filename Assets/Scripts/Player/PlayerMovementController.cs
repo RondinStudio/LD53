@@ -78,5 +78,9 @@ public class PlayerMovementController : MonoBehaviour
 
             spriteTransform.eulerAngles = new Vector3(0, 0, wantedRotation);
         }
+        else
+        {
+            spriteTransform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }

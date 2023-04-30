@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small blue Box Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4587355458301893851, guid: 0ee46a03b9807c141b9c218aef7bfb5d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2235c93ee74fd1c42ba49c04175294af, type: 3}
     - target: {fileID: 4587355458301893852, guid: 0ee46a03b9807c141b9c218aef7bfb5d, type: 3}
       propertyPath: m_RootOrder
       value: 0

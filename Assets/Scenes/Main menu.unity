@@ -2500,10 +2500,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3543269573763387531, guid: f9ea50eef3d02ae4d80d90ab9e802577, type: 3}
-      propertyPath: m_TagString
-      value: Singleton
-      objectReference: {fileID: 0}
     - target: {fileID: 3543269573763387533, guid: f9ea50eef3d02ae4d80d90ab9e802577, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2546,6 +2542,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3543269573763387533, guid: f9ea50eef3d02ae4d80d90ab9e802577, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284484509436901653, guid: f9ea50eef3d02ae4d80d90ab9e802577, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

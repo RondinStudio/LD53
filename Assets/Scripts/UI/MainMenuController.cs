@@ -10,23 +10,49 @@ public class MainMenuController : MonoBehaviour
     public GameObject buttonsContainer;
     public GameObject nameObject;
 
+    private AudioSource buttonSound;
+
     public GameObject leaderboardScorePanel;
     public GameObject verticalGroup;
 
     public LeaderboardFirebaseUtils leaderboardUtils;
+	
+	private void Start()
+    {
+        if (GameObject.FindGameObjectWithTag("Singleton") != null)
+        {
+            buttonSound = GameObject.FindGameObjectWithTag("Singleton").GetComponent<AudioSource>();
+        }
+    }
 
     public void ClickStart()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ClickExit()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
         Application.Quit();
     }
 
     public void OptionClick()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         optionsMenu.SetActive(true);
 
         buttonsContainer.SetActive(false);
@@ -35,6 +61,12 @@ public class MainMenuController : MonoBehaviour
 
     public async void ClickLeaderboard()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         leaderboardUtils = gameObject.GetComponent<LeaderboardFirebaseUtils>();
         await leaderboardUtils.getScores();
         leaderboardScorePanel.SetActive(true);
@@ -43,6 +75,12 @@ public class MainMenuController : MonoBehaviour
 
     public void ClickBackOption()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         optionsMenu.SetActive(false);
         leaderboardScorePanel.SetActive(false);
 

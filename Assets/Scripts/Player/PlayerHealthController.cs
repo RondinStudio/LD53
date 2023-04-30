@@ -27,7 +27,8 @@ public class PlayerHealthController : MonoBehaviour
         {
             EnterNamePanel.SetActive(true);
             ScorePanel.SetActive(false);
-            Destroy(gameObject);
+
+            // We will need to cut the sound of the drone here at least
         }
     }
 }

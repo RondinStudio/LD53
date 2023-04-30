@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GrabCollisionDetector : MonoBehaviour
 {
     private FixedJoint2D boxJoint;
+
+    private bool _isCarrying = false;
 
     void OnTriggerStay2D(Collider2D collision)
     {
@@ -12,7 +15,7 @@ public class GrabCollisionDetector : MonoBehaviour
         {
             if (!boxJoint)
             {
-                if (Input.GetKey(KeyCode.Space))
+                if (_isCarrying)
                 {
                     // creates joint
                     boxJoint = gameObject.AddComponent<FixedJoint2D>();
@@ -31,9 +34,17 @@ public class GrabCollisionDetector : MonoBehaviour
     {
         if (boxJoint)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Destroy(boxJoint);
+                _isCarrying = false;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _isCarrying = true;
             }
         }
     }

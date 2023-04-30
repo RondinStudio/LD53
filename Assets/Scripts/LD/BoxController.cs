@@ -7,6 +7,11 @@ public class BoxController : MonoBehaviour
     public BoxValues boxValues;
     public GameObject highlightObject;
 
+    private void Start()
+    {
+        gameObject.GetComponent<Rigidbody2D>().mass = boxValues.weight;
+    }
+
     public void EnableHighlightBoxes()
     {
         highlightObject.GetComponent<SpriteRenderer>().enabled = true;

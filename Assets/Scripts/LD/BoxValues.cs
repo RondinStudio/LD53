@@ -7,4 +7,5 @@ public class BoxValues : ScriptableObject
 {
     public EColor color;
     public int scoreValue;
+    public float weight = 30f;
 }

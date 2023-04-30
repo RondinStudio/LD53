@@ -6,6 +6,8 @@ public class GrabCollisionDetector : MonoBehaviour
 {
     private FixedJoint2D boxJoint;
 
+    private BoxController hoveringBoxController;
+
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Box"))
@@ -22,7 +24,30 @@ public class GrabCollisionDetector : MonoBehaviour
                     boxJoint.connectedBody = collision.gameObject.GetComponentInParent<Rigidbody2D>();
                     // Stops objects from continuing to collide and creating more joints
                     boxJoint.enableCollision = false;
+
+                    if (hoveringBoxController)
+                    {
+                        hoveringBoxController.DisableHighlightBoxes();
+                        hoveringBoxController = null;
+                    }
                 }
+            }
+            if (!hoveringBoxController && !boxJoint)
+            {
+                hoveringBoxController = collision.gameObject.GetComponent<BoxController>();
+                hoveringBoxController.EnableHighlightBoxes();
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (hoveringBoxController)
+        {
+            if (hoveringBoxController == collision.gameObject.GetComponent<BoxController>())
+            {
+                hoveringBoxController.DisableHighlightBoxes();
+                hoveringBoxController = null;
             }
         }
     }

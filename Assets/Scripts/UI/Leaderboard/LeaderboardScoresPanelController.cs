@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LeaderboardScoresPanelController : MonoBehaviour
 {
@@ -13,6 +14,17 @@ public class LeaderboardScoresPanelController : MonoBehaviour
     private TextMeshProUGUI[] rankTexts;
 
     private LeaderboardFirebaseUtils leaderboardUtils;
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     void Start()
     {

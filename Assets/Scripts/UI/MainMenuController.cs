@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -11,7 +12,12 @@ public class MainMenuController : MonoBehaviour
 
     private AudioSource buttonSound;
 
-    private void Start()
+    public GameObject leaderboardScorePanel;
+    public GameObject verticalGroup;
+
+    public LeaderboardFirebaseUtils leaderboardUtils;
+	
+	private void Start()
     {
         if (GameObject.FindGameObjectWithTag("Singleton") != null)
         {
@@ -53,6 +59,14 @@ public class MainMenuController : MonoBehaviour
         nameObject.SetActive(false);
     }
 
+    public async void ClickLeaderboard()
+    {
+        leaderboardUtils = gameObject.GetComponent<LeaderboardFirebaseUtils>();
+        await leaderboardUtils.getScores();
+        leaderboardScorePanel.SetActive(true);
+        verticalGroup.SetActive(false);
+    }
+
     public void ClickBackOption()
     {
         if (buttonSound)
@@ -62,7 +76,9 @@ public class MainMenuController : MonoBehaviour
         }
 
         optionsMenu.SetActive(false);
+        leaderboardScorePanel.SetActive(false);
 
+        verticalGroup.SetActive(true);
         buttonsContainer.SetActive(true);
         nameObject.SetActive(true);
     }

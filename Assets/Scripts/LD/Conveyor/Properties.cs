@@ -14,7 +14,6 @@ public class Properties : MonoBehaviour
 
     public float Speed;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (GameObject.FindGameObjectWithTag("MainCamera").transform.position.x < gameObject.transform.position.x)
@@ -25,13 +24,13 @@ public class Properties : MonoBehaviour
         {
             _direction = EDirection.Right;
         }
+
         SurfaceEffector2D surfaceEffector = gameObject.GetComponent<SurfaceEffector2D>();
         surfaceEffector.speed = Speed * (float)_direction * _speeds[Random.Range(0, _speeds.Length)];
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (TireRotation tireRotation in gameObject.GetComponentsInChildren<TireRotation>())
+        {
+            tireRotation.speed *= -(float)_direction;
+        }
     }
 }

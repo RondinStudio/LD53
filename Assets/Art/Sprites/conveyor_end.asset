@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: conveyor_end
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 7482667652216324306, guid: c58c0456633a4204eb1b8607af7608e4, type: 3}
-  m_Color: {r: 0.93725497, g: 0.427451, b: 0.25882354, a: 1}
+  m_Sprite: {fileID: -706645657, guid: 542a4ee4de6ec94469b2c4151340eca2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0

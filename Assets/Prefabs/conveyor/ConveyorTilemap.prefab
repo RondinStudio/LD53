@@ -247,7 +247,7 @@ Tilemap:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -5, y: -5, z: 0}
   m_Size: {x: 16, y: 7, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileAnchor: {x: 2, y: 2, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
@@ -390,36 +390,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 9184537549206213138}
     m_ColliderPaths:
-    - - X: 47999996
-        Y: 20000000
-      - X: -86399992
-        Y: 20000000
-      - X: -86399992
-        Y: 10000000
-      - X: 47999996
-        Y: 10000000
-    - - X: -86400000
-        Y: 20000000
-      - X: -95999992
-        Y: 20000000
-      - X: -95999992
-        Y: 10000000
-      - X: -86400000
-        Y: 10000000
-    - - X: -96000000
-        Y: 20000000
-      - X: -105599992
-        Y: 20000000
-      - X: -105599992
-        Y: 10000000
-      - X: -96000000
-        Y: 10000000
+    - - X: -35000000
+        Y: 25000000
+      - X: 125000000
+        Y: 25000000
+      - X: 125000000
+        Y: 35000000
+      - X: -35000000
+        Y: 35000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 4.7999706, y: 1}
-      - {x: 4.7999706, y: 2}
-      - {x: -10.559999, y: 1.9999708}
-      - {x: -10.55997, y: 1}
+    - - {x: 12.49997, y: 2.5}
+      - {x: 12.49997, y: 3.5}
+      - {x: -3.5, y: 3.499971}
+      - {x: -3.499971, y: 2.5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!114 &9184537549206213166
@@ -434,5 +418,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890a919796dc6294581aa75c2db95152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
   Speed: 2.5

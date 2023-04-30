@@ -90,6 +90,7 @@ public class GrabCollisionDetector : MonoBehaviour
     {
         if (boxJoint)
         {
+            _isCarrying = false;
             Destroy(boxJoint);
             if (!grabSound.isPlaying)
                 grabSound.Play();

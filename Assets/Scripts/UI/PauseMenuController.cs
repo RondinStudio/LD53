@@ -16,11 +16,6 @@ public class PauseMenuController : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        scorePanel.SetActive(false);
-    }
-
     public void Retry()
     {
         if (buttonSound)

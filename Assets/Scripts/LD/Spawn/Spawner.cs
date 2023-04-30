@@ -2,7 +2,6 @@ using Assets.Scripts.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -21,14 +20,14 @@ public class Spawner : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        while (GameObjects.Count() < MaxElements || MaxElements == 0)
+        while (GameObjects.Count < MaxElements || MaxElements == 0)
         {
             if(SpawnPointsList.Count > 0 && SpawnPointsList != null && Prefab.Count > 0 && Prefab != null)
             {
                 try
                 {
-                    GameObject randomPrefab = Prefab[UnityEngine.Random.Range(0, Prefab.Count() - 1)];
-                    Transform randomSpawnPoint = SpawnPointsList[UnityEngine.Random.Range(0, SpawnPointsList.Count() - 1)];
+                    GameObject randomPrefab = Prefab[UnityEngine.Random.Range(0, Prefab.Count - 1)];
+                    Transform randomSpawnPoint = SpawnPointsList[UnityEngine.Random.Range(0, SpawnPointsList.Count - 1)];
 
                     GameObject newObject = Instantiate(randomPrefab, randomSpawnPoint);
                     GameObjects.Add(newObject);

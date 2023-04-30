@@ -6,14 +6,14 @@ using UnityEngine;
 public class LeaderboardScoresPanelController : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI[] texts;
-
+    private TextMeshProUGUI[] scoreTexts;
     [SerializeField]
-    private Color32 highlightColor;
+    private TextMeshProUGUI[] nameTexts;
+    [SerializeField]
+    private TextMeshProUGUI[] rankTexts;
 
     private LeaderboardFirebaseUtils leaderboardUtils;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Here, we assume that leaderboard is correctly fetched (createLeaderboardEntry finished with success)
@@ -28,26 +28,31 @@ public class LeaderboardScoresPanelController : MonoBehaviour
             // Display "..." between the top scores and the scores around the player. Add an offset of 1 to array index.
             if (entry.rank != previousRank + 1)
             {
-                texts[i].text = "...";
+                rankTexts[i].text = "";
+                nameTexts[i].text = "...";
+                scoreTexts[i].text = "";
                 offset = 1;
             }
 
             // Fill leaderboard text
-            texts[i + offset].text = "#" + entry.rank + " - " + entry.name + " - " + entry.score + "pts";
+            rankTexts[i + offset].text = "#" + entry.rank;
+            nameTexts[i + offset].text = entry.name;
+            scoreTexts[i + offset].text = entry.score + "pts";
 
             // Add style to current player score
             if (entry.name == leaderboardUtils.getPlayerName() && entry.score == leaderboardUtils.getScore()) {
-                texts[i + offset].color = highlightColor;
-                texts[i + offset].fontStyle = FontStyles.Bold;
+                foreach (var textItem in new TextMeshProUGUI[][] { rankTexts, nameTexts, scoreTexts })
+                {
+                    textItem[i + offset].outlineColor = new Color32(0, 0, 0, 255); ;
+                    textItem[i + offset].outlineWidth = 0.3f;
+                    if (entry.rank > 3)
+                    {
+                        textItem[i + offset].color = new Color32(255, 255, 255, 255);
+                    }
+                }
             }
 
             previousRank = entry.rank;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

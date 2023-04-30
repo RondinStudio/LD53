@@ -7,17 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 680391488532698025, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 393982f329f46b34a95bb37fcb459efb, type: 3}
     - target: {fileID: 1790738737142859172, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1790738737142859172, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1790738737142859172, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1790738737142859172, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53,11 +57,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1790738737142859173, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_Name
-      value: Green goal
+      value: Green goal Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5952570259075305829, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: goalValues
       value: 
       objectReference: {fileID: 11400000, guid: f0b9685962836404785eddc006fe9070, type: 2}
+    - target: {fileID: 8567653090088581069, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 665adb16c82ac5341a077ad728f2ffa0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}

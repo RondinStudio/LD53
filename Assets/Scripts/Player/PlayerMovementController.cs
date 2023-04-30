@@ -68,12 +68,19 @@ public class PlayerMovementController : MonoBehaviour
     {
         rb.AddForce(moveVelocity * Time.fixedDeltaTime);
 
-        if (rb.velocity.y != 0)
+        if (rb.velocity.sqrMagnitude > 10)
         {
-            velocityInterpolation = rb.velocity.x / Mathf.Abs(rb.velocity.y);
-            wantedRotation = remap(-velocityInterpolation, -1, 1, -maxRotation, maxRotation, true, true, true, true);
-        }
+            if (rb.velocity.y != 0)
+            {
+                velocityInterpolation = rb.velocity.x / Mathf.Abs(rb.velocity.y);
+                wantedRotation = remap(-velocityInterpolation, -1, 1, -maxRotation, maxRotation, true, true, true, true);
+            }
 
-        spriteTransform.eulerAngles = new Vector3(0, 0, wantedRotation);
+            spriteTransform.eulerAngles = new Vector3(0, 0, wantedRotation);
+        }
+        else
+        {
+            spriteTransform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }

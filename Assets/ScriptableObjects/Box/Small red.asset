@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Small red
   m_EditorClassIdentifier: 
   color: 0
-  size: 0
   scoreValue: 1
+  weight: 150

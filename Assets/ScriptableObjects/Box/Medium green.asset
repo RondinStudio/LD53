@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Medium green
   m_EditorClassIdentifier: 
   color: 1
-  size: 1
   scoreValue: 2
+  weight: 30

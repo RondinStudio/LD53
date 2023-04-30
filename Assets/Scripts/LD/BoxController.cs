@@ -5,41 +5,20 @@ using UnityEngine;
 public class BoxController : MonoBehaviour
 {
     public BoxValues boxValues;
+    public GameObject highlightObject;
 
-    private Color GetColorFromEnum(EColor color)
+    private void Start()
     {
-        switch (color)
-        {
-            case EColor.Red:
-                return Color.red;
-            case EColor.Green:
-                return Color.green;
-            case EColor.Blue:
-                return Color.blue;
-            default:
-                return Color.white;
-        }
+        gameObject.GetComponent<Rigidbody2D>().mass = boxValues.weight;
     }
 
-    private int GetMultiplierFromSize(ESize size)
+    public void EnableHighlightBoxes()
     {
-        switch (size)
-        {
-            case ESize.Small:
-                return 1;
-            case ESize.Medium:
-                return 2;
-            case ESize.Large:
-                return 3;
-            default:
-                return 1;
-        }
+        highlightObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
-    void Start()
+    public void DisableHighlightBoxes()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = GetColorFromEnum(boxValues.color);
-        gameObject.GetComponent<Rigidbody2D>().mass *= GetMultiplierFromSize(boxValues.size);
-        gameObject.GetComponent<Transform>().localScale *= GetMultiplierFromSize(boxValues.size);
+        highlightObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 }

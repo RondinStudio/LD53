@@ -71,6 +71,7 @@ public class SpawnManager : MonoBehaviour
             _obstacleSpawner.SpawnPointsList = ObstacleSpawnPoints;
             _obstacleSpawner.MaxElements = MaxObstacleElements;
             _obstacleSpawner.SpawnDelay = ObstacleSpawnDelay;
+            _obstacleSpawner.OnGameObjectsListChange += ObstacleGameObjects_CollectionChanged;
 
             StartCoroutine(_crateSpawner.Spawn());
 
@@ -127,6 +128,20 @@ public class SpawnManager : MonoBehaviour
         {
             _crateSpawner.SpawnPointsList.AddRange(newItem.GetComponentInChildren<Spawner>().SpawnPointsList);
             _conveyorSpawner.SpawnPointsList.Remove(spawnPointUsed);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+    }
+
+    private void ObstacleGameObjects_CollectionChanged(object sender, EventArgs e)
+    {
+        Transform spawnPointUsed = (e as GameObjectCollectionChangedEventArgs).SpawnPointUsed;
+
+        try
+        {
+            _obstacleSpawner.SpawnPointsList.Remove(spawnPointUsed);
         }
         catch (Exception ex)
         {

@@ -24,7 +24,10 @@ public class WallOfDeathController : MonoBehaviour
             }
 
             Destroy(collision.gameObject);
-            playerHealthController.RemoveHealth();
+            if (playerHealthController)
+            {
+                playerHealthController.RemoveHealth();
+            }
         }
     }
 }

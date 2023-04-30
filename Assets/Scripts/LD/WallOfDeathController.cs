@@ -6,10 +6,12 @@ using UnityEngine;
 public class WallOfDeathController : MonoBehaviour
 {
     private PlayerHealthController playerHealthController;
+    private GrabCollisionDetector grabCollisionDetector;
 
     private void Start()
     {
-        playerHealthController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthController>();    
+        playerHealthController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealthController>();
+        grabCollisionDetector = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<GrabCollisionDetector>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -18,6 +20,7 @@ public class WallOfDeathController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             playerHealthController.RemoveHealth();
+            grabCollisionDetector.DestroyJointIfPresent();
         }
     }
 }

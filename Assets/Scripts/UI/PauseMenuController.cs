@@ -23,13 +23,14 @@ public class PauseMenuController : MonoBehaviour
 
     public void Retry()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if (buttonSound)
         {
             if (!buttonSound.isPlaying)
                 buttonSound.Play();
         }
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Resume()

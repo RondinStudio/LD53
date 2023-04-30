@@ -14,20 +14,40 @@ public class LeaderboardScoresPanelController : MonoBehaviour
     private TextMeshProUGUI[] rankTexts;
 
     private LeaderboardFirebaseUtils leaderboardUtils;
+    private AudioSource buttonSound;
+
 
     public void GoToMainMenu()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         SceneManager.LoadScene(0);
     }
 
     public void Retry()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Start()
     {
+        if (GameObject.FindGameObjectWithTag("Singleton") != null && !buttonSound)
+        {
+            buttonSound = GameObject.FindGameObjectWithTag("Singleton").GetComponent<AudioSource>();
+        }
+
         // Here, we assume that leaderboard is correctly fetched (createLeaderboardEntry finished with success)
         leaderboardUtils = gameObject.GetComponentInParent<LeaderboardFirebaseUtils>();
 

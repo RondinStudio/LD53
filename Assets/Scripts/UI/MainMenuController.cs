@@ -61,6 +61,12 @@ public class MainMenuController : MonoBehaviour
 
     public async void ClickLeaderboard()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         leaderboardUtils = gameObject.GetComponent<LeaderboardFirebaseUtils>();
         await leaderboardUtils.getScores();
         leaderboardScorePanel.SetActive(true);

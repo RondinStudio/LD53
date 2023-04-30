@@ -9,15 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1790738736856767750, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.27
+      value: 2.166611
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790738736856767750, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.038659938
       objectReference: {fileID: 0}
     - target: {fileID: 1790738736856767750, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.33
+      value: 1.3738
       objectReference: {fileID: 0}
     - target: {fileID: 1790738736856767750, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.78
+      value: 0.7625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790738736856767751, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1790738737142859172, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_RootOrder
@@ -67,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue goal Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1790738737170264576, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1790738737170264579, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.125
@@ -87,10 +99,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1790738737302385516, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790738737302385516, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 1790738737302385519, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 506d59165a7418f4b89a25e95e48e840, type: 3}
+    - target: {fileID: 1790738737904313712, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1790738737904313715, guid: b127ca4abc609a14cafeaa7e4812e1fc, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.79

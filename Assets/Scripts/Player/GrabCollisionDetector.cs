@@ -8,6 +8,9 @@ public class GrabCollisionDetector : MonoBehaviour
 
     private BoxController hoveringBoxController;
 
+    [SerializeField]
+    private Rigidbody2D grabRb;
+
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Box"))
@@ -17,7 +20,7 @@ public class GrabCollisionDetector : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     // creates joint
-                    boxJoint = gameObject.AddComponent<FixedJoint2D>();
+                    boxJoint = grabRb.gameObject.AddComponent<FixedJoint2D>();
                     // sets joint position to point of contact
                     boxJoint.anchor = collision.ClosestPoint(collision.transform.position);
                     // conects the joint to the other object
@@ -61,6 +64,7 @@ public class GrabCollisionDetector : MonoBehaviour
                 Destroy(boxJoint);
             }
         }
+        gameObject.GetComponent<Rigidbody2D>().position = grabRb.position;
     }
 
     public void DestroyJointIfPresent()

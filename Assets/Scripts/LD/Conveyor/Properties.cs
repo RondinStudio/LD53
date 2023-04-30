@@ -8,8 +8,6 @@ public class Properties : MonoBehaviour
         Right = 1,
     }
 
-    private readonly float[] _speeds = { 1.0f, 1.25f, 1.50f, 1.75f, 2.0f };
-
     private EDirection _direction;
 
     public float Speed;
@@ -26,7 +24,8 @@ public class Properties : MonoBehaviour
         }
 
         SurfaceEffector2D surfaceEffector = gameObject.GetComponent<SurfaceEffector2D>();
-        surfaceEffector.speed = Speed * (float)_direction * _speeds[Random.Range(0, _speeds.Length)];
+		
+        surfaceEffector.speed = Speed * (float)_direction;
 
         foreach (TireRotation tireRotation in gameObject.GetComponentsInChildren<TireRotation>())
         {

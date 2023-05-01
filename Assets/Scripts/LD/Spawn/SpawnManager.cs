@@ -45,6 +45,9 @@ public class SpawnManager : MonoBehaviour
 
     public float ObstacleSpawnDelayMaximum = 15.0f;
 
+    [SerializeField]
+    private float TimeBeforeObstacleSpawnDelayIsMax = 80.0f;
+
     private Spawner _conveyorSpawner;
 
     private Spawner _crateSpawner;
@@ -168,6 +171,7 @@ public class SpawnManager : MonoBehaviour
         try
         {
             _obstacleSpawner.SpawnPointsList.Remove(spawnPointUsed);
+            _obstacleSpawner.SpawnDelay = ObstacleSpawnDelayMinimum + (Time.timeSinceLevelLoad * (ObstacleSpawnDelayMaximum - ObstacleSpawnDelayMinimum) / TimeBeforeObstacleSpawnDelayIsMax);
         }
         catch (Exception ex)
         {

@@ -13,6 +13,7 @@ public class PlayerHealthController : MonoBehaviour
 
     public GameObject EnterNamePanel;
     public GameObject ScorePanel;
+    public CanvasController canvasController;
 
     public void RemoveHealth()
     {
@@ -27,6 +28,8 @@ public class PlayerHealthController : MonoBehaviour
         {
             EnterNamePanel.SetActive(true);
             ScorePanel.SetActive(false);
+
+            canvasController.canPause = false;
 
             // We will need to cut the sound of the drone here at least
         }

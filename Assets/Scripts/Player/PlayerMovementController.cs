@@ -32,6 +32,9 @@ public class PlayerMovementController : MonoBehaviour
     private float wantedRotation;
     private Quaternion angleQuaternion = Quaternion.identity;
 
+    [SerializeField]
+    private AudioSource droneSound;
+
     void Start()
     {
         // Get all references

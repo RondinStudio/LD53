@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4583684790898466083}
   m_Layer: 0
   m_Name: MovingWallHorizontalRight
-  m_TagString: Wall
+  m_TagString: MovingWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

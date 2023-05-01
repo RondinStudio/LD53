@@ -334,6 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimalIncrementScore: 0
-  MaximalIncrementScore: 1e+12
+  MaximalIncrementScore: 90
   SpawnRateIncrement: 0
   SpawnRateFactor: 1

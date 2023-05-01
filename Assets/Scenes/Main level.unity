@@ -1195,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1455,7 +1455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: MaxCrateElements
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorSpawnDelay
@@ -1476,6 +1476,10 @@ PrefabInstance:
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: Conveyors.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
+      propertyPath: CrateSpawnDelayOffset
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: CratePrefab.Array.size
@@ -1551,15 +1555,15 @@ PrefabInstance:
       objectReference: {fileID: 7301352537325189891, guid: 825cd538a1795f4499f652384c9cf9d3, type: 3}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ObstaclePrefab.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ObstacleSpawnDelayMaximum
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ObstacleSpawnDelayMinimum
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: CratePrefab.Array.data[10]
@@ -1606,6 +1610,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2994597930534884410, guid: 30d2c68b9fe02cc45878db193c875f1d, type: 3}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
+      propertyPath: CrateSpawnDelayAcceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorPrefab.Array.data[0]
       value: 
       objectReference: {fileID: 3409222907321359737, guid: 630c474c03e961a4aba57938823e9267, type: 3}
@@ -1625,6 +1633,10 @@ PrefabInstance:
       propertyPath: ObstaclePrefab.Array.data[3]
       value: 
       objectReference: {fileID: 2386673068070106349, guid: 52505fed7afe61644b3aa96f435665cb, type: 3}
+    - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
+      propertyPath: ObstaclePrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 2595161839992942558, guid: 96ff66ba4720f0f4089b63c640eb6d87, type: 3}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorSpawnPoints.Array.size
       value: 6
@@ -1713,6 +1725,10 @@ PrefabInstance:
       propertyPath: ObstacleSpawnPoints.Array.data[9]
       value: 
       objectReference: {fileID: 1439982175}
+    - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
+      propertyPath: TimeBeforeObstacleSpawnDelayIsMax
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorSpawnPoints.Array.data[10]
       value: 
@@ -2520,7 +2536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3177,7 +3193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3644,7 +3660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158339580158227648, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
       propertyPath: health
-      value: 2147483647
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2158339580158227648, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
       propertyPath: ScorePanel
@@ -3946,7 +3962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4039,7 +4055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4345,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1853609925035263021, guid: 630c474c03e961a4aba57938823e9267, type: 3}
       propertyPath: m_LocalPosition.y

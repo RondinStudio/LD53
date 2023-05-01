@@ -134,7 +134,10 @@ public class SpawnManager : MonoBehaviour
     #region EventHandlers
     private void CrateGameObjects_CollectionChanged(object sender, EventArgs e)
     {
-        _crateSpawner.SpawnDelay = CrateSpawnDelayOffset + (-CrateSpawnDelayAcceleration * Time.timeSinceLevelLoad);
+        if (_crateSpawner.SpawnDelay >= 1.0f)
+        {
+            _crateSpawner.SpawnDelay = CrateSpawnDelayOffset + (-CrateSpawnDelayAcceleration * Time.timeSinceLevelLoad);
+        }
     }
 
     private void ObstacleGameObjects_CollectionChanged(object sender, EventArgs e)

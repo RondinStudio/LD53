@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5230008824998440684}
   m_Layer: 0
   m_Name: MovingWallHorizontalLeft
-  m_TagString: Wall
+  m_TagString: MovingWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

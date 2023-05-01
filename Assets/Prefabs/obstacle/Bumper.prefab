@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7672e5051723545bd6c518d8e5167d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinimalIncrementScore: 0
-  MaximalIncrementScore: 0
+  MinimalIncrementScore: 20
+  MaximalIncrementScore: 50
   SpawnRateIncrement: 0
   SpawnRateFactor: 1

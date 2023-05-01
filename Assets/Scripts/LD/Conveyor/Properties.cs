@@ -8,6 +8,7 @@ public class Properties : MonoBehaviour
         Right = 1,
     }
 
+    [SerializeField]
     private EDirection _direction;
 
     public float Speed;

@@ -82,7 +82,7 @@ public class LeaderboardFirebaseUtils : MonoBehaviour
 
     public string hashLeaderboardEntry(string playerName, int score)
     {
-        string key = "b4fs8Bg6r4fbs5fRGwb5gHd7hqkz6g"; // DO NOT MODIFY THIS KEY
+        string key = gameObject.GetComponent<ENV>().GetKey();
         string plainData = playerName + score + key;
         return ComputeSha256Hash(plainData);
     }

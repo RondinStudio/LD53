@@ -7,9 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8901685180464880109, guid: 41030d25259552644a820b69ff0951ac, type: 3}
+      propertyPath: SpawnRateFactor
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8901685180464880109, guid: 41030d25259552644a820b69ff0951ac, type: 3}
+      propertyPath: SpawnRateIncrement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8901685180464880109, guid: 41030d25259552644a820b69ff0951ac, type: 3}
+      propertyPath: MaximalIncrementScore
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: -8901685180464880109, guid: 41030d25259552644a820b69ff0951ac, type: 3}
+      propertyPath: MinimalIncrementScore
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3718356395520521949, guid: 41030d25259552644a820b69ff0951ac, type: 3}
       propertyPath: m_Name
-      value: Skilsaw
+      value: StaticSkilsaw
       objectReference: {fileID: 0}
     - target: {fileID: 3718356395520521951, guid: 41030d25259552644a820b69ff0951ac, type: 3}
       propertyPath: m_RootOrder

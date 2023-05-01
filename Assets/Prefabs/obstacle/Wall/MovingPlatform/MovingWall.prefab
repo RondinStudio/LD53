@@ -7,8 +7,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 217525422418415983, guid: 4de90a8004734e84c879b32a985e0621, type: 3}
+      propertyPath: SpawnRateFactor
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 217525422418415983, guid: 4de90a8004734e84c879b32a985e0621, type: 3}
+      propertyPath: MaximalIncrementScore
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 217525422418415983, guid: 4de90a8004734e84c879b32a985e0621, type: 3}
+      propertyPath: MinimalIncrementScore
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 9210428724223286638, guid: 4de90a8004734e84c879b32a985e0621, type: 3}
       propertyPath: m_Name
+      value: MovingWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210428724223286638, guid: 4de90a8004734e84c879b32a985e0621, type: 3}
+      propertyPath: m_TagString
       value: MovingWall
       objectReference: {fileID: 0}
     - target: {fileID: 9210428724223286639, guid: 4de90a8004734e84c879b32a985e0621, type: 3}

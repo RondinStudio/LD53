@@ -25,7 +25,7 @@ function sha256(string) {
 async function createScore(name, score, hash, firestore) {
 
 	// If someone try to cheat, do not add entry and return here
-	const key = "b4fs8Bg6r4fbs5fRGwb5gHd7hqkz6g"; // DO NOT MODIFY THIS KEY
+	const key = "b4fs8Bg6r4fbs5fRGwb5gHd7hqkz6g"; // fake key haha, i've changed it after noticing i've commited it
 	const computedHash = sha256(name + score + key);
 	if (computedHash !== hash) {
 		console.log("Someone tried to cheat! (name=", name, ", score=", score, ", hash=", hash, ")");

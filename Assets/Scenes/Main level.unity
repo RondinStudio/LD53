@@ -3807,6 +3807,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}

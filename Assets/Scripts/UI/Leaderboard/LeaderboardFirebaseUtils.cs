@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public static class JsonHelper
@@ -22,14 +23,16 @@ public static class JsonHelper
 [System.Serializable]
 public class LeaderboardEntry
 {
-    public LeaderboardEntry(string name, int score)
+    public LeaderboardEntry(string name, int score, string hash = "")
     {
         this.name = name;
         this.score = score;
+        this.hash = hash;
     }
 
     public string name;
     public int score;
+    public string hash;
     public int rank = 0;
 }
 
@@ -58,6 +61,33 @@ public class LeaderboardFirebaseUtils : MonoBehaviour
         return score;
     }
 
+    // -----------------------------------------------------------------
+    static string ComputeSha256Hash(string rawData)
+    {
+        // Create a SHA256
+        using (SHA256 sha256Hash = SHA256.Create())
+        {
+            // ComputeHash - returns byte array
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+            // Convert byte array to a string
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                builder.Append(bytes[i].ToString("x2"));
+            }
+            return builder.ToString();
+        }
+    }
+
+    public string hashLeaderboardEntry(string playerName, int score)
+    {
+        string key = "b4fs8Bg6r4fbs5fRGwb5gHd7hqkz6g"; // DO NOT MODIFY THIS KEY
+        string plainData = playerName + score + key;
+        return ComputeSha256Hash(plainData);
+    }
+    // -----------------------------------------------------------------
+
     public async Task createLeaderboardEntry(string playerName, int score)
     {
         this.playerName = playerName;
@@ -65,8 +95,10 @@ public class LeaderboardFirebaseUtils : MonoBehaviour
 
         try
         {
+            string hash = hashLeaderboardEntry(playerName, score);
+
             // Create new leaderboard entry
-            LeaderboardEntry newEntry = new LeaderboardEntry(playerName, score);
+            LeaderboardEntry newEntry = new LeaderboardEntry(playerName, score, hash);
             StringContent stringContent = new StringContent(JsonUtility.ToJson(newEntry), Encoding.UTF8, "application/json");
 
             // Send new leaderboard entry to Firebase database

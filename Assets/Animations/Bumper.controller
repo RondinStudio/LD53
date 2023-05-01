@@ -13,11 +13,11 @@ AnimatorStateMachine:
     m_State: {fileID: -3156661103837432591}
     m_Position: {x: 350, y: 50, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -5236499953805938322}
-    m_Position: {x: 360, y: 140, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -4452709937791666153}
     m_Position: {x: 350, y: -60, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4987931118857494078}
+    m_Position: {x: 357.4746, y: 194.44849, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -27,15 +27,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -5236499953805938322}
---- !u!1102 &-5236499953805938322
+  m_DefaultState: {fileID: -4987931118857494078}
+--- !u!1102 &-4987931118857494078
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpawnObstacles
+  m_Name: SpawnBumper
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 494deec7aa795d94fbb58aa7bf7d0f2f, type: 2}
+  m_Motion: {fileID: 7400000, guid: d8e69a818a6e13741a8aa1d202b6c7e8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

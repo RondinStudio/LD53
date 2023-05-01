@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 187fd39cc603c684babac2f21322ada9
+guid: 339e38e579d964441b5f168f74c7fe6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bumper_ball_sheet_0
+      name: bumper_ball_sheet (1)_0
       rect:
         serializedVersion: 2
         x: 6
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8049f59506007e4a8d3275390e97bf4
-      internalID: 2120099476
+      spriteID: 4d140c71859ee88488e362dffad05189
+      internalID: 1115017147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bumper_ball_sheet_1
+      name: bumper_ball_sheet (1)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 701c676503f462549a05f43cbb1b401e
-      internalID: -2073221451
+      spriteID: 8c239c150b27fee4ab34bba7c5f835ac
+      internalID: -468005306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bumper_ball_sheet_2
+      name: bumper_ball_sheet (1)_2
       rect:
         serializedVersion: 2
         x: 2
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47fac8fbf5ca9f742aff2888e72f3c2c
-      internalID: 1998323271
+      spriteID: 21cd3f09da132aa4f86be7ba29cf6948
+      internalID: 1960774422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bumper_ball_sheet_3
+      name: bumper_ball_sheet (1)_3
       rect:
         serializedVersion: 2
         x: 36
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faaaf417ec4a079459698280f02693a9
-      internalID: -1417476573
+      spriteID: c13b84ce2c1663247bff6d8245a16aea
+      internalID: 2004049721
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bumper_ball_sheet_0: 2120099476
-      bumper_ball_sheet_1: -2073221451
-      bumper_ball_sheet_2: 1998323271
-      bumper_ball_sheet_3: -1417476573
+      bumper_ball_sheet (1)_0: 1115017147
+      bumper_ball_sheet (1)_1: -468005306
+      bumper_ball_sheet (1)_2: 1960774422
+      bumper_ball_sheet (1)_3: 2004049721
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

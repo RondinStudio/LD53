@@ -3,16 +3,17 @@ using Assets.Scripts.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     #region Declarations
     [SerializeField] 
-    private List<Transform> ConveyorSpawnPoints = new List<Transform>();
+    private List<GameObject> ConveyorSpawnPoints = new List<GameObject>();
 
     [SerializeField] 
-    private List<Transform> ObstacleSpawnPoints = new List<Transform>();
+    private List<GameObject> ObstacleSpawnPoints = new List<GameObject>();
 
     [SerializeField] 
     private List<GameObject> ConveyorPrefab;
@@ -33,11 +34,16 @@ public class SpawnManager : MonoBehaviour
 
     public int MaxObstacleElements = 4;
 
-    public float ConveyorSpawnDelay = 5.0f;
+    private float ConveyorSpawnDelay = 0f;
 
-    public float CrateSpawnDelay = 1.0f;
+    public float CrateSpawnDelayOffset = 5.0f;
 
-    public float ObstacleSpawnDelay = 1.0f;
+    [SerializeField]
+    private float CrateSpawnDelayAcceleration = 1.0f;
+
+    public float ObstacleSpawnDelayMinimum = 5.0f;
+
+    public float ObstacleSpawnDelayMaximum = 15.0f;
 
     private Spawner _conveyorSpawner;
 
@@ -65,12 +71,13 @@ public class SpawnManager : MonoBehaviour
 
             _crateSpawner.Prefab = CratePrefab;
             _crateSpawner.MaxElements = MaxCrateElements;
-            _crateSpawner.SpawnDelay = CrateSpawnDelay;
+            _crateSpawner.SpawnDelay = CrateSpawnDelayOffset;
+            _crateSpawner.OnGameObjectsListChange += CrateGameObjects_CollectionChanged;
 
             _obstacleSpawner.Prefab = ObstaclePrefab;
             _obstacleSpawner.SpawnPointsList = ObstacleSpawnPoints;
             _obstacleSpawner.MaxElements = MaxObstacleElements;
-            _obstacleSpawner.SpawnDelay = ObstacleSpawnDelay;
+            _obstacleSpawner.SpawnDelay = ObstacleSpawnDelayMinimum;
             _obstacleSpawner.OnGameObjectsListChange += ObstacleGameObjects_CollectionChanged;
 
             StartCoroutine(_crateSpawner.Spawn());
@@ -96,12 +103,26 @@ public class SpawnManager : MonoBehaviour
             {
                 try
                 {
-                    GameObject randomPrefab = ObstaclePicker.PickRandomObstacle(spawner.Prefab);
-                    Transform randomSpawnPoint = spawner.SpawnPointsList[UnityEngine.Random.Range(0, spawner.SpawnPointsList.Count - 1)];
+                    ///the type of obstacle you want to spawn
+                    GameObject randomObstacle = ObstaclePicker.PickRandomObstacle(spawner.Prefab);
 
-                    GameObject newObject = Instantiate(randomPrefab, randomSpawnPoint);
-                    spawner.GameObjects.Add(newObject);
-                    spawner.OnGameObjectsListChange?.Invoke(this, new GameObjectCollectionChangedEventArgs(newObject, randomSpawnPoint));
+                    ///the list of spawnpoints that can spawn randomObstacle
+                    List<GameObject> availableSpawners = spawner.SpawnPointsList.
+                        Where(s => s.GetComponent<ObstacleSpawnerProperties>().AvailablePrefabs.
+                        Select(p => p.tag).
+                        Contains(randomObstacle.tag)).ToList();
+                    if(availableSpawners.Count > 0)
+                    {
+                        GameObject randomSpawnPoint = availableSpawners[UnityEngine.Random.Range(0, availableSpawners.Count - 1)];
+
+                        ///the chosen prefab from spawnpoint
+                        GameObject[] availablePrefabs = randomSpawnPoint.GetComponent<ObstacleSpawnerProperties>().AvailablePrefabs.Where(p => p.CompareTag(randomObstacle.tag)).ToArray();
+                        GameObject randomPrefab = availablePrefabs[UnityEngine.Random.Range(0, availablePrefabs.Length)];
+
+                        GameObject newObject = Instantiate(randomPrefab, randomSpawnPoint.transform);
+                        spawner.GameObjects.Add(newObject);
+                        spawner.OnGameObjectsListChange?.Invoke(this, new GameObjectCollectionChangedEventArgs(newObject, randomSpawnPoint));
+                    }
                 }
                 catch (Exception e)
                 {
@@ -109,7 +130,7 @@ public class SpawnManager : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(spawner.SpawnDelay);
-            timeScore = Time.timeSinceLevelLoad ;
+            timeScore = Time.timeSinceLevelLoad;
             foreach (GameObject obstacle in spawner.Prefab)
             {
                 obstacle.GetComponent<ObstacleProperties>().UpdateSpawnRate(timeScore);
@@ -122,7 +143,7 @@ public class SpawnManager : MonoBehaviour
     private void ConveyorGameObjects_CollectionChanged(object sender, EventArgs e)
     {
         GameObject newItem = (e as GameObjectCollectionChangedEventArgs).NewItem;
-        Transform spawnPointUsed = (e as GameObjectCollectionChangedEventArgs).SpawnPointUsed;
+        GameObject spawnPointUsed = (e as GameObjectCollectionChangedEventArgs).SpawnPointUsed;
 
         try
         {
@@ -135,9 +156,14 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    private void CrateGameObjects_CollectionChanged(object sender, EventArgs e)
+    {
+        //_crateSpawner.SpawnDelay = CrateSpawnDelayOffset / (CrateSpawnDelayAcceleration * Time.timeSinceLevelLoad);
+    }
+
     private void ObstacleGameObjects_CollectionChanged(object sender, EventArgs e)
     {
-        Transform spawnPointUsed = (e as GameObjectCollectionChangedEventArgs).SpawnPointUsed;
+        GameObject spawnPointUsed = (e as GameObjectCollectionChangedEventArgs).SpawnPointUsed;
 
         try
         {

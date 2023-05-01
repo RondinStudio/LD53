@@ -7,9 +7,9 @@ namespace Assets.Scripts.Utils
     {
         public GameObject NewItem;
 
-        public Transform SpawnPointUsed;
+        public GameObject SpawnPointUsed;
 
-        public GameObjectCollectionChangedEventArgs(GameObject newItems, Transform spawnPointsUsed)
+        public GameObjectCollectionChangedEventArgs(GameObject newItems, GameObject spawnPointsUsed)
         {
             NewItem = newItems;
             SpawnPointUsed = spawnPointsUsed;

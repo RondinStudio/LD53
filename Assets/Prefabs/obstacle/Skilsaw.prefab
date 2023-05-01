@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8901685180464880109}
   m_Layer: 0
   m_Name: Skilsaw
-  m_TagString: Untagged
+  m_TagString: Skilsaw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!58 &3718356395520521937
 CircleCollider2D:
@@ -156,6 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimalIncrementScore: 0
-  MaximalIncrementScore: 0
+  MaximalIncrementScore: 1e+12
   SpawnRateIncrement: 0
   SpawnRateFactor: 1

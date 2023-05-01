@@ -12,6 +12,10 @@ TagManager:
   - Skilsaw
   - Conveyor
   - Pointer
+  - Wall
+  - WallSpiked
+  - SmallSaw
+  - MovingWall
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - Box
   - AntiPlayerWall
   - NoCollisionGrab
-  - 
+  - SawLauncher
   - 
   - 
   - 

@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: abec3e650096bd04b8d7e8707bb9898f, type: 2}
     - target: {fileID: 4587355458301893849, guid: 0ee46a03b9807c141b9c218aef7bfb5d, type: 3}
       propertyPath: m_Name
-      value: Medium blue Box Variant
+      value: Long blue Box Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4587355458301893851, guid: 0ee46a03b9807c141b9c218aef7bfb5d, type: 3}
       propertyPath: m_Sprite

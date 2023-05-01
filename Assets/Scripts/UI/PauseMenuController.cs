@@ -6,14 +6,24 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject scorePanel;
+    private AudioSource buttonSound;
 
-    private void Awake()
+    private void Start()
     {
-        scorePanel.SetActive(false);
+        if (GameObject.FindGameObjectWithTag("Singleton") != null)
+        {
+            buttonSound = GameObject.FindGameObjectWithTag("Singleton").GetComponent<AudioSource>();
+        }
     }
 
     public void Retry()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -21,11 +31,21 @@ public class PauseMenuController : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1f;
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
     }
 
     public void Exit()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
     }
 }

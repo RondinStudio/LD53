@@ -19,8 +19,15 @@ public class AskNamePanelController : MonoBehaviour
 
     private LeaderboardFirebaseUtils leaderboardUtils;
 
+    private AudioSource buttonSound;
+
     private void Start()
     {
+        if (GameObject.FindGameObjectWithTag("Singleton") != null && !buttonSound)
+        {
+            buttonSound = GameObject.FindGameObjectWithTag("Singleton").GetComponent<AudioSource>();
+        }
+
         scoreController = GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreController>();
         leaderboardUtils = gameObject.GetComponentInParent<LeaderboardFirebaseUtils>();
 
@@ -29,6 +36,12 @@ public class AskNamePanelController : MonoBehaviour
 
     public async void OnSendNamePressed()
     {
+        if (buttonSound)
+        {
+            if (!buttonSound.isPlaying)
+                buttonSound.Play();
+        }
+
         await leaderboardUtils.createLeaderboardEntry(nameField.text, scoreController.GetScore());
         leaderboardScorePanel.SetActive(true);
         gameObject.SetActive(false);

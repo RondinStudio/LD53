@@ -14,6 +14,9 @@ public class GrabCollisionDetector : MonoBehaviour
     [SerializeField]
     private Rigidbody2D grabRb;
 
+    [SerializeField]
+    private AudioSource grabSound;
+
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Box"))
@@ -22,6 +25,9 @@ public class GrabCollisionDetector : MonoBehaviour
             {
                 if (_isCarrying)
                 {
+                    if (!grabSound.isPlaying)
+                        grabSound.Play();
+
                     // creates joint
                     boxJoint = grabRb.gameObject.AddComponent<FixedJoint2D>();
                     // sets joint position to point of contact
@@ -64,6 +70,8 @@ public class GrabCollisionDetector : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                if (!grabSound.isPlaying)
+                    grabSound.Play();
                 Destroy(boxJoint);
                 _isCarrying = false;
             }
@@ -82,7 +90,10 @@ public class GrabCollisionDetector : MonoBehaviour
     {
         if (boxJoint)
         {
+            _isCarrying = false;
             Destroy(boxJoint);
+            if (!grabSound.isPlaying)
+                grabSound.Play();
         }
     }
 

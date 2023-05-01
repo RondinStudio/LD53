@@ -636,6 +636,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4425135215138412201, guid: 6c84d180574445f4a8a41086308fde96, type: 3}
   m_PrefabInstance: {fileID: 8671596078549786691}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1440139157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 638868798631082604, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
+  m_PrefabInstance: {fileID: 2356082437446374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1518762479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3718356395520521949, guid: 41030d25259552644a820b69ff0951ac, type: 3}
@@ -945,30 +950,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2356083571090770, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1217,17 +1198,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2356083608293858, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
   m_PrefabInstance: {fileID: 2356082437446374}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2356082437446377 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7051111841221427477, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
-  m_PrefabInstance: {fileID: 2356082437446374}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &995206168984840883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2194,7 +2164,11 @@ PrefabInstance:
     - target: {fileID: 2158339580158227648, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 2356082437446377}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158339580158227648, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
+      propertyPath: healthBoxes
+      value: 
+      objectReference: {fileID: 1440139157}
     - target: {fileID: 2158339580158227648, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
       propertyPath: EnterNamePanel
       value: 

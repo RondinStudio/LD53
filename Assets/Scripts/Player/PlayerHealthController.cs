@@ -9,7 +9,7 @@ public class PlayerHealthController : MonoBehaviour
     private int health = 5;
 
     [SerializeField]
-    private TextMeshProUGUI healthText;
+    private GameObject healthBoxes;
 
     public GameObject EnterNamePanel;
     public GameObject ScorePanel;
@@ -18,7 +18,7 @@ public class PlayerHealthController : MonoBehaviour
     public void RemoveHealth()
     {
         health--;
-        healthText.text = "Health : " + health;
+        Destroy(healthBoxes.transform.GetChild(0).gameObject);
         CheckForLoseCondition();
     }
 

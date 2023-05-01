@@ -12,6 +12,8 @@ TagManager:
   - Skilsaw
   - Conveyor
   - Pointer
+  - Wall
+  - WallSpiked
   layers:
   - Default
   - TransparentFX

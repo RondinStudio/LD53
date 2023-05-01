@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Box
   - Singleton
+  - Obstacle
+  - Bumper
+  - MovingPlatform
+  - Skilsaw
   - Conveyor
   - Pointer
   layers:

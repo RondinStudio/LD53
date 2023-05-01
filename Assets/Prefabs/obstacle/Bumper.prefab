@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5274426708181284914}
   m_Layer: 0
   m_Name: Bumper
-  m_TagString: Untagged
+  m_TagString: Bumper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimalIncrementScore: 0
-  MaximalIncrementScore: 0
+  MaximalIncrementScore: 1e+12
   SpawnRateIncrement: 0
   SpawnRateFactor: 1

@@ -7,6 +7,7 @@ TagManager:
   - Box
   - Singleton
   - Conveyor
+  - Pointer
   layers:
   - Default
   - TransparentFX

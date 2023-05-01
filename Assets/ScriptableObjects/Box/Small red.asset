@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   scoreValue: 1
-  weight: 150
+  weight: 30

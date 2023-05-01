@@ -16,7 +16,7 @@ public class GoalPointer : MonoBehaviour
 
     private GrabCollisionDetector grabCollisionDetector;
 
-    private int borderSize = 50;
+    private int borderSize = 100;
 
     private void Start()
     {

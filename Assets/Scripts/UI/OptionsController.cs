@@ -10,8 +10,6 @@ public class OptionsController : MonoBehaviour
     [SerializeField] Slider music;
     [SerializeField] Slider sfx;
 
-    [SerializeField] Button VolumeButton;
-
     public AudioMixer MusicMixer;
     public AudioMixer SFXMixer;
 
@@ -34,13 +32,11 @@ public class OptionsController : MonoBehaviour
 
         if(isVolumeOn == true)
         {
-            VolumeButton.image.sprite = Volume;
             music.value = 0.5f;
             sfx.value = 0.5f;
         }
         else
         {
-            VolumeButton.image.sprite = noVolume;
             music.value = 0.00001f;
             sfx.value = 0.00001f;
         }
@@ -73,12 +69,10 @@ public class OptionsController : MonoBehaviour
         if (musicDb == 0.00001f && sfxDb == 0.00001f)
         {
             isVolumeOn = false;
-            VolumeButton.image.sprite = noVolume;
         }
         else
         {
             isVolumeOn = true;
-            VolumeButton.image.sprite = Volume;
         }
     }
 }

@@ -4722,22 +4722,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8909925950059626770, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9029085259901418637, guid: 5dc8b8e576ee37a47b5ae0e70433fa74, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -5963,11 +5947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 480.35
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2356083360811992, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6132,6 +6116,10 @@ PrefabInstance:
     - target: {fileID: 356580174819771302, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221962842060435244, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2897583756087775602, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: targetTransform.Array.size

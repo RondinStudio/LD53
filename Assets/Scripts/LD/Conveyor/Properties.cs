@@ -12,8 +12,12 @@ public class Properties : MonoBehaviour
 
     public float Speed;
 
+    private int numberOfBoxOn = 0;
+
     void Start()
     {
+        //GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<ArrowController>().AddConveyor(this);
+
         if (GameObject.FindGameObjectWithTag("MainCamera").transform.position.x < gameObject.transform.position.x)
         {
             _direction = EDirection.Left;
@@ -31,5 +35,26 @@ public class Properties : MonoBehaviour
         {
             tireRotation.speed *= -(float)_direction;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Box"))
+        {
+            numberOfBoxOn++;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Box"))
+        {
+            numberOfBoxOn--;
+        }
+    }
+
+    public bool HasBoxOn()
+    {
+        return numberOfBoxOn > 0;
     }
 }

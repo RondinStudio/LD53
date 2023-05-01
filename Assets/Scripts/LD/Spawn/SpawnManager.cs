@@ -31,6 +31,9 @@ public class SpawnManager : MonoBehaviour
     public float CrateSpawnDelayOffset = 5.0f;
 
     [SerializeField]
+    private float CrateSpawnMinimunDelay = 7.0f;
+
+    [SerializeField]
     private float CrateSpawnDelayAcceleration = 1.0f;
 
     public float ObstacleSpawnDelayMinimum = 5.0f;
@@ -134,7 +137,7 @@ public class SpawnManager : MonoBehaviour
     #region EventHandlers
     private void CrateGameObjects_CollectionChanged(object sender, EventArgs e)
     {
-        if (_crateSpawner.SpawnDelay >= 1.0f)
+        if (_crateSpawner.SpawnDelay >= CrateSpawnMinimunDelay)
         {
             _crateSpawner.SpawnDelay = CrateSpawnDelayOffset + (-CrateSpawnDelayAcceleration * Time.timeSinceLevelLoad);
         }

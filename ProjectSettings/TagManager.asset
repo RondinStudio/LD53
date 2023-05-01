@@ -16,6 +16,7 @@ TagManager:
   - WallSpiked
   - SmallSaw
   - MovingWall
+  - MovingSkilsaw
   layers:
   - Default
   - TransparentFX

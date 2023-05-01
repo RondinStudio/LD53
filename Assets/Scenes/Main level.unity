@@ -1826,7 +1826,7 @@ PrefabInstance:
       objectReference: {fileID: 2994597930534884410, guid: 30d2c68b9fe02cc45878db193c875f1d, type: 3}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: CrateSpawnDelayAcceleration
-      value: 0.001
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorPrefab.Array.data[0]
@@ -2564,6 +2564,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2356081781583920, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
   m_PrefabInstance: {fileID: 1958394825}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &664794344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664794343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f78594f4eb9dc4f8aee6010d7f2281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &674215041
 PrefabInstance:
   m_ObjectHideFlags: 0

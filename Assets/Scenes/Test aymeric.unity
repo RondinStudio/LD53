@@ -702,6 +702,10 @@ PrefabInstance:
       propertyPath: targetTransform.Array.data[2]
       value: 
       objectReference: {fileID: 618139655}
+    - target: {fileID: 2356081845710598, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2356082945404225, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

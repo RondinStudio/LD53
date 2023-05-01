@@ -7,6 +7,8 @@ public class BoxController : MonoBehaviour
     public BoxValues boxValues;
     public GameObject highlightObject;
 
+    public GameObject particlesObject;
+
     private void Start()
     {
         gameObject.GetComponent<Rigidbody2D>().mass = boxValues.weight;

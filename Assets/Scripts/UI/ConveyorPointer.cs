@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ConveyorPointer : MonoBehaviour
 {
-    //[SerializeField]
-    //private List<GameObject> convoyerGameObjects;
-
     [SerializeField]
     private List<Properties> convoyerProperties;
 
@@ -17,15 +14,6 @@ public class ConveyorPointer : MonoBehaviour
     private List<RectTransform> pointerRectTransform;
 
     private int borderSize = 50;
-
-    /*private void Start()
-    {
-        foreach(GameObject convoyer in convoyerGameObjects)
-        {
-            targetTransform.Add(convoyer.transform);
-            convoyerProperties.Add(convoyer.GetComponentInChildren<Properties>());
-        }
-    }*/
 
     private void Update()
     {

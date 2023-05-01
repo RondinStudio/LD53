@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   SpawnPointsList:
-  - {fileID: 5762599227681076727}
+  - {fileID: 7708763971964713414}
   MaxElements: 3
   SpawnDelay: 0.5
 --- !u!1 &827609474528298507

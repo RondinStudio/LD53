@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2743096932137105155}
   m_Layer: 0
   m_Name: MovingPlatform
-  m_TagString: Untagged
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  Waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  Waypoints: []
 --- !u!114 &-2743096932137105155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimalIncrementScore: 0
-  MaximalIncrementScore: 0
+  MaximalIncrementScore: 1e+12
   SpawnRateIncrement: 0
   SpawnRateFactor: 1

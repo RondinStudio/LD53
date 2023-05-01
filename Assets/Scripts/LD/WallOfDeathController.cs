@@ -29,6 +29,9 @@ public class WallOfDeathController : MonoBehaviour
             if (!destructionSound.isPlaying)
                 destructionSound.Play();
 
+            Quaternion rotation = Quaternion.identity;
+            rotation.eulerAngles = new Vector3(-90f, 0f, 0f);
+            Instantiate(collision.transform.GetComponent<BoxController>().particlesObject, collision.transform.position, rotation);
             Destroy(collision.gameObject);
             if (playerHealthController)
             {

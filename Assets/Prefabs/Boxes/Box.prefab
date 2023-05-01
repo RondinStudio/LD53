@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxValues: {fileID: 0}
   highlightObject: {fileID: 2982554053848355705}
+  particlesObject: {fileID: 4310279184168495384, guid: 357f32765e749d74687e9d0682e79c2e, type: 3}
 --- !u!212 &4587355458301893851
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8054960578115307167}
   - component: {fileID: 8054960578115307164}
   - component: {fileID: 8054960578115307165}
+  - component: {fileID: -2743096932137105155}
   m_Layer: 0
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -128,3 +129,19 @@ MonoBehaviour:
   Waypoints:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &-2743096932137105155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8054960578115307163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7672e5051723545bd6c518d8e5167d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinimalIncrementScore: 0
+  MaximalIncrementScore: 0
+  SpawnRateIncrement: 0
+  SpawnRateFactor: 1

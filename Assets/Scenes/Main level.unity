@@ -6137,6 +6137,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2554853867929155662, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
+      propertyPath: m_text
+      value: Fetching...
+      objectReference: {fileID: 0}
     - target: {fileID: 2897583756087775602, guid: 58c52cf0a60774b45b1ed2f8c111aa59, type: 3}
       propertyPath: targetTransform.Array.size
       value: 6

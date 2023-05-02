@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -47,7 +45,10 @@ public class LeaderboardScoresPanelController : MonoBehaviour
         {
             buttonSound = GameObject.FindGameObjectWithTag("Singleton").GetComponent<AudioSource>();
         }
+    }
 
+    public void Refresh()
+    {
         // Here, we assume that leaderboard is correctly fetched (createLeaderboardEntry finished with success)
         leaderboardUtils = gameObject.GetComponentInParent<LeaderboardFirebaseUtils>();
 
@@ -72,7 +73,8 @@ public class LeaderboardScoresPanelController : MonoBehaviour
             scoreTexts[i + offset].text = entry.score + "pts";
 
             // Add style to current player score
-            if (entry.name == leaderboardUtils.getPlayerName() && entry.score == leaderboardUtils.getScore()) {
+            if (entry.name == leaderboardUtils.getPlayerName() && entry.score == leaderboardUtils.getScore())
+            {
                 foreach (var textItem in new TextMeshProUGUI[][] { rankTexts, nameTexts, scoreTexts })
                 {
                     textItem[i + offset].outlineColor = new Color32(0, 0, 0, 255); ;

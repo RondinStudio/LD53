@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -50,8 +45,6 @@ public class PlayerMovementController : MonoBehaviour
 
         moveInput = new Vector2(mx, my);
         moveVelocity = moveInput.normalized * speed;
-
-        Debug.Log(Time.timeSinceLevelLoad);
     }
 
     // Full version, clamping settable on all 4 range elements (in1, in2, out1, out2)

@@ -1,9 +1,10 @@
 using System;
+using System.Collections;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public static class JsonHelper
 {
@@ -88,67 +89,62 @@ public class LeaderboardFirebaseUtils : MonoBehaviour
     }
     // -----------------------------------------------------------------
 
-    public async Task createLeaderboardEntry(string playerName, int score)
+    public IEnumerator createLeaderboardEntry(string playerName, int score, EventHandler finishedEvent)
     {
         this.playerName = playerName;
         this.score = score;
 
-        try
+        string hash = hashLeaderboardEntry(playerName, score);
+
+        // Create new leaderboard entry
+        LeaderboardEntry newEntry = new LeaderboardEntry(playerName, score, hash);
+        WWWForm form = new WWWForm();
+        form.AddField("name", playerName);
+        form.AddField("score", score);
+        form.AddField("hash", hash);
+
+        // Send new leaderboard entry to Firebase database
+        using (UnityWebRequest www = UnityWebRequest.Post(FirebaseURI + "/addScore", form))
         {
-            string hash = hashLeaderboardEntry(playerName, score);
+            yield return www.SendWebRequest();
 
-            // Create new leaderboard entry
-            LeaderboardEntry newEntry = new LeaderboardEntry(playerName, score, hash);
-            StringContent stringContent = new StringContent(JsonUtility.ToJson(newEntry), Encoding.UTF8, "application/json");
-
-            // Send new leaderboard entry to Firebase database
-            var response = await client.PostAsync(FirebaseURI + "/addScore", stringContent);
-            if (response != null)
+            if (www.result != UnityWebRequest.Result.Success)
             {
-                string jsonString = await response.Content.ReadAsStringAsync();
+                Debug.Log(www.error);
+            }
+            else
+            {
+                string jsonString = www.downloadHandler.text;
                 // Save leaderboard
                 leaderboard = JsonHelper.FromJson<LeaderboardEntry>(jsonString);
+                LeaderboardScoresPanelController leaderboardController = gameObject.GetComponentInChildren<LeaderboardScoresPanelController>();
+                leaderboardController.Refresh();
             }
-        }
-        catch (HttpRequestException e)
-        {
-            Debug.Log(e.Message);
-            // Set leaderboard to an empty array, to avoid crashing the leaderboard panel
-            leaderboard = new LeaderboardEntry[0];
+            finishedEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 
-    public async Task getScores()
+    public IEnumerator getScores()
     {
-        try
+        // Send new leaderboard entry to Firebase database
+        using (UnityWebRequest www = UnityWebRequest.Post(FirebaseURI + "/getScores", ""))
         {
-            // Send new leaderboard entry to Firebase database
-            var response = await client.PostAsync(FirebaseURI + "/getScores", null);
-            if (response != null)
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
             {
-                string jsonString = await response.Content.ReadAsStringAsync();
+                Debug.Log(www.error);
+                // Set leaderboard to an empty array, to avoid crashing the leaderboard panel
+                leaderboard = new LeaderboardEntry[0];
+            }
+            else
+            {
+                string jsonString = www.downloadHandler.text;
                 // Save leaderboard
                 leaderboard = JsonHelper.FromJson<LeaderboardEntry>(jsonString);
+                LeaderboardScoresPanelController leaderboardController = gameObject.GetComponentInChildren<LeaderboardScoresPanelController>();
+                leaderboardController.Refresh();
             }
         }
-        catch (HttpRequestException e)
-        {
-            Debug.Log(e.Message);
-            // Set leaderboard to an empty array, to avoid crashing the leaderboard panel
-            leaderboard = new LeaderboardEntry[0];
-        }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }

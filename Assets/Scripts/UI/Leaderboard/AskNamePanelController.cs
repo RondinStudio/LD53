@@ -21,6 +21,8 @@ public class AskNamePanelController : MonoBehaviour
 
     private AudioSource buttonSound;
 
+    private EventHandler _scoreSubmitted;
+
     private void Start()
     {
         if (GameObject.FindGameObjectWithTag("Singleton") != null && !buttonSound)
@@ -32,18 +34,24 @@ public class AskNamePanelController : MonoBehaviour
         leaderboardUtils = gameObject.GetComponentInParent<LeaderboardFirebaseUtils>();
 
         SendScoreToText(); // add this here?
+
+        _scoreSubmitted += ScoreSubmitted_EventHandler;
     }
 
-    public async void OnSendNamePressed()
+    public void OnSendNamePressed()
     {
         if (buttonSound)
         {
             if (!buttonSound.isPlaying)
                 buttonSound.Play();
         }
-
-        await leaderboardUtils.createLeaderboardEntry(nameField.text, scoreController.GetScore());
+        
+        StartCoroutine(leaderboardUtils.createLeaderboardEntry(nameField.text, scoreController.GetScore(), _scoreSubmitted));
         leaderboardScorePanel.SetActive(true);
+    }
+
+    private void ScoreSubmitted_EventHandler(object sender, EventArgs e)
+    {
         gameObject.SetActive(false);
     }
 

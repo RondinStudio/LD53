@@ -59,7 +59,7 @@ public class MainMenuController : MonoBehaviour
         nameObject.SetActive(false);
     }
 
-    public async void ClickLeaderboard()
+    public void ClickLeaderboard()
     {
         if (buttonSound)
         {
@@ -68,7 +68,7 @@ public class MainMenuController : MonoBehaviour
         }
 
         leaderboardUtils = gameObject.GetComponent<LeaderboardFirebaseUtils>();
-        await leaderboardUtils.getScores();
+        StartCoroutine(leaderboardUtils.getScores());
         leaderboardScorePanel.SetActive(true);
         verticalGroup.SetActive(false);
     }

@@ -48,12 +48,22 @@ public class SpawnManager : MonoBehaviour
     private Spawner _obstacleSpawner;
     #endregion
 
+    private void ResetObstacleScores(List<GameObject> prefabs)
+    {
+        foreach (GameObject prefab in prefabs)
+        {
+            prefab.GetComponent<ObstacleProperties>().SpawnRateIncrement = 0f;
+        }
+    }
+
     #region UI Management
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         try
         {
+            ResetObstacleScores(ObstaclePrefab);
+
             _crateSpawner = Instantiate(SpawnerPrefab).GetComponent<Spawner>();
             _obstacleSpawner = Instantiate(SpawnerPrefab).GetComponent<Spawner>();
 

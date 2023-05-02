@@ -1701,6 +1701,10 @@ PrefabInstance:
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
+      propertyPath: CrateSpawnMinimunDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: Conveyors.Array.data[0]
       value: 
       objectReference: {fileID: 1756911066}
@@ -1826,7 +1830,7 @@ PrefabInstance:
       objectReference: {fileID: 2994597930534884410, guid: 30d2c68b9fe02cc45878db193c875f1d, type: 3}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: CrateSpawnDelayAcceleration
-      value: 0.002
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorPrefab.Array.data[0]
@@ -1946,7 +1950,7 @@ PrefabInstance:
       objectReference: {fileID: 1439982175}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: TimeBeforeObstacleSpawnDelayIsMax
-      value: 60
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 9110794056525739540, guid: 76c5b29353831344ab11a7b6a126497e, type: 3}
       propertyPath: ConveyorSpawnPoints.Array.data[10]

@@ -2227,6 +2227,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4080008041823536838, guid: f9ea50eef3d02ae4d80d90ab9e802577, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9ea50eef3d02ae4d80d90ab9e802577, type: 3}
 --- !u!1 &4020212321912803907
@@ -3358,7 +3362,6 @@ MonoBehaviour:
   Volume: {fileID: 21300000, guid: 35f5cf29a83b4c546b853fe13f473f4e, type: 3}
   music: {fileID: 4020212322725358418}
   sfx: {fileID: 4020212321998705820}
-  VolumeButton: {fileID: 0}
   MusicMixer: {fileID: 24100000, guid: 899829f14d49fd440974b3217f7e0360, type: 2}
   SFXMixer: {fileID: 24100000, guid: ed5e381300334e341859d71ca7dffb48, type: 2}
 --- !u!114 &4020212322628464552

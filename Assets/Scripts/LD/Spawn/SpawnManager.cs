@@ -50,7 +50,7 @@ public class SpawnManager : MonoBehaviour
 
     #region UI Management
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         try
         {

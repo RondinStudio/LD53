@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: d693a38b8df537c4aa0c5790b37876df, type: 3}
     - target: {fileID: 744771459213084454, guid: 0ee46a03b9807c141b9c218aef7bfb5d, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3536505854653089245, guid: 0ee46a03b9807c141b9c218aef7bfb5d, type: 3}
       propertyPath: boxValues
